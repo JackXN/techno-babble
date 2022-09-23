@@ -8,7 +8,7 @@ import Link from 'next/link';
 import moment from 'moment';
 
 const PostCard = ({post}) => {
-    // console.log(post.author)
+    // console.log(post.author) 
     // console.log(post)
     return (
         // CARD CONTAINER

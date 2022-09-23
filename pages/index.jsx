@@ -5,9 +5,12 @@ import Head from 'next/head'
 import React, {useEffect} from 'react';
 import MainPost from '../components/MainPost';
 import AOS from 'aos';
+
+
+
 export default function Home({ posts} ) {
 
-
+// console.log(posts)
   useEffect(() => {
     AOS.init({})
   }, [])
@@ -25,11 +28,7 @@ export default function Home({ posts} ) {
     </Head>
     <div className="container px-10 mx-auto mb-8">
       {/* <FeaturedPosts /> //! featured posts go here  */}
-      <MainPost />
-
-      {/* ALMOST THERE SNIPPET */}
-      {/* grid grid-rows-4 grid-flow-col gap-4 */}
-
+ <MainPost posts={posts}/>
 
       <div className="grid grid-rows-2 gap-2 bg-gray-900 lg:grid-cols-2 lg:flex ">
         <div className="">
