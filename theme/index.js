@@ -12,4 +12,4 @@ const breakpoints = [
 
 
 const customTheme = extendTheme({breakpoints,colors})
-export default customTheme%
+export default customTheme;
