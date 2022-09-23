@@ -3,6 +3,7 @@ import { PostCard, Categories, PostWidget, Footer} from '../components';
 import { getPosts } from '../services';
 import Head from 'next/head'
 import React, {useEffect} from 'react';
+import MainPost from '../components/MainPost';
 import AOS from 'aos';
 export default function Home({ posts} ) {
 
@@ -23,19 +24,25 @@ export default function Home({ posts} ) {
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"/>
     </Head>
     <div className="container px-10 mx-auto mb-8">
-      <FeaturedPosts /> //! featured posts go here 
-      <div className="grid grid-cols-1 gap-12 lg:grid-cols-12">
-        <div className="col-span-1 lg:col-span-8">
+      {/* <FeaturedPosts /> //! featured posts go here  */}
+      <MainPost />
+
+      {/* ALMOST THERE SNIPPET */}
+      {/* grid grid-rows-4 grid-flow-col gap-4 */}
+
+
+      <div className="grid grid-rows-2 gap-2 bg-gray-900 lg:grid-cols-2 lg:flex ">
+        <div className="">
           {posts.map((post, index) => (
             <PostCard key={index} post={post.node}/>
           ))}
         </div>
-        <div className="col-span-1 lg:col-span-4">
+        {/* <div className="col-span-1 lg:col-span-4">
           <div className="relative lg:sticky top-8">
-            <PostWidget />
-            <Categories />
+            <PostWidget/>
+            <Categories/>
           </div>
-        </div>
+        </div> */}
       </div> 
       <Footer/>
     </div>
