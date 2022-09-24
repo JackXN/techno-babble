@@ -25,6 +25,9 @@ export default function Home({ posts} ) {
     <meta property='og:title' content='Tech discussions, topics, resources and blogs'/>  
     <link rel="shortcut icon" href="/favicon.ico" />
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;900&display=swap" rel="stylesheet"/>
     </Head>
     <div className="container px-10 mx-auto mb-8">
       {/* <FeaturedPosts /> //! featured posts go here  */}
