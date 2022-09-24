@@ -1,51 +1,64 @@
 import React from 'react'
-import { getPosts } from '../services';
+import { Box, Text } from '@chakra-ui/react';
+import Image from 'next/image';
 
-import { PostCard } from './PostCard';
-
-import { Box, StylesProvider, Text } from '@chakra-ui/react';
-import { syntaxError } from 'graphql';
-
+    
 
 
 export default function MainPost({posts}) {
-//    console.log('here are the ', posts)
-//    console.log('here we go',posts.author)
+       console.log('here are the ', posts)
+    //    console.log('here we go',posts.author)
+    
 
-
-// SYNTAX FOR PRINTING WHAT I WANT 
-{/* <h1>{post.node.author.bio}</h1> */}
-
+    
     return (
-        <div style={{height:'100px', background: 'white'}}>
-           {posts.splice(0,1).map((post,index) => (
+        <Box sx={styles.container}>
+        {posts.map((post,index) => (
             //    MAIN CARD DISPLAY HERE
-            <Box sx={styles.mainContainer}>
-                <Box sx={styles.imageContainer}>
-                    <img src={post.node.featuredImage.url} alt={post.title}/> 
-                </Box>
+            <Box sx={styles.mainContainer} key={index}>
+            <Box sx={styles.imageContainer}>
+            <Image src={post.node.featuredImage.url} alt={post.title} height='100%' width='100%'/> 
             </Box>
-           ))}
-        </div>
-    )
-}
 
-const styles = {
-    mainContainer: {
-        display: 'flex',
-    },
-    imageContainer: {
-height: '50px',
-width: '50px',
-    },
-}
+            <Box sx={styles.contentContainer}>
+            <Text as='h1'>{post.node.title}</Text>
+            </Box>
+            </Box>
 
-
-export async function getStaticProps() {
-    const posts = (await getPosts() || []);
-    return {
-        props: {posts}
-    };
-}
-
-
+            ))}
+           
+            </Box>
+            )
+        }
+        
+        const styles = {
+            container: {
+                display: 'flex',
+                flexDirection: 'column',
+            },
+            mainContainer: {
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'center',
+                alignItems: 'center',
+                pb: ['100px'],
+                backgroundColor: 'orange',
+                mb: '200px'
+            },
+            imageContainer: {
+                
+                
+                
+            },
+        }
+        
+        
+        // export async function getStaticProps() {
+        //     const posts = (await getPosts() || []);
+        //     return {
+        //         props: {posts}
+        //     };
+        // }
+        
+        
+        
