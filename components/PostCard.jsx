@@ -3,6 +3,8 @@ import React from 'react';
 // COmponents
 import Link from 'next/link';
 
+import {Box} from '@chakra-ui/react';
+
 
 
 import moment from 'moment';
@@ -12,8 +14,9 @@ const PostCard = ({post}) => {
     // console.log(post)
     return (
         // CARD CONTAINER
-        <div className='pb-12 m-10 mb-8 bg-gray-800 rounded-lg shadow-lg lg:p-8 ' data-aos='fade-right' data-aos-duration='1000' data-aos-delay='100'>
+        // <div className='pb-12 m-10 mb-8 bg-gray-800 rounded-lg shadow-lg lg:p-8 ' data-aos='fade-right' data-aos-duration='1000' data-aos-delay='100'>
             
+            <div className='p-10 pb-12 m-10 mb-8 bg-gray-100' style={{backgroundColor: '#26272B'}}>
         {/* CARD */}
         <div className='relative mb-6 overflow-hidden shadow-md pb-80'>
         <img 
@@ -23,30 +26,22 @@ const PostCard = ({post}) => {
         />
         </div>
         
-        <h1 className='mb-8 text-3xl font-semibold text-center text-white transition duration-100 cursor-pointer hover:text-emerald-400'>
-        <Link href={`/post/${post.slug}`}>
+        <h1  className='mb-8 font-semibold text-center text-white transition duration-100 cursor-pointer hover:text-emerald-400' style={{color: '#F4F4F5', fontSize: '45px', fontFamily: 'inter ,sans-serif'}}>
+        <Link href={`/post/${post.slug}`}  >
         {post.title}
         </Link>
         </h1>
         <div className='items-center justify-center block w-full mb-8 text-center lg:flex'>
-        <div className='flex items-center justify-center w-full mb-4 mr-8 lg:mb-0 lg:w-auto'>
-        <img
-        alt={post.author.name}
-        height='30px'
-        width='30px'
-        className='align-middle rounded-full'
-        src={post.author.photo.url}
-        />
-        <p className='inline ml-2 text-lg text-gray-500 align-middle'>{post.author.name}</p>
-        </div>
         <div className='font-medium text-gray-500'>
         <svg xmlns="http://www.w3.org/2000/svg" className="inline w-6 h-6 mr-2 text-emerald-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
         </svg>
-        <span className="align-middle">{moment(post.createdAt).format('MMM DD, YYYY')}</span>
+        <span className="align-middle" style={{ fontFamily: 'Catamaran',
+                fontSize: '14px',
+                color: '#F4F4F5',}}>{moment(post.createdAt).format('MMM DD, YYYY')}</span>
         </div>
         </div>
-        <p className='px-4 mb-8 text-lg font-normal text-center text-gray-500 lg:p-2'>{post.excerpt}</p>
+        <p style={{fontFamily: 'Catamaran', fontWeight: '900', color: 'white'}}className='px-4 mb-8 font-normal text-center text-gray-500 lg:p-2'>{post.excerpt}</p>
         <div className='text-center'>
         <Link href={`/post/${post.slug}`}>
         <span className='inline-block px-8 py-2 text-lg font-medium text-white transition duration-500 transform rounded-full cursor-pointer bg-emerald-400 hover:-translate-y-1'>

@@ -5,7 +5,7 @@ import Head from 'next/head'
 import React, {useEffect} from 'react';
 import MainPost from '../components/MainPost';
 import AOS from 'aos';
-
+import { Box } from '@chakra-ui/react';
 
 
 export default function Home({ posts} ) {
@@ -33,11 +33,12 @@ export default function Home({ posts} ) {
       {/* <FeaturedPosts /> //! featured posts go here  */}
  <MainPost posts={posts}/>
       <div className="grid grid-rows-2 gap-2 lg:grid-cols-2 lg:flex ">
-        <div>
+        
+       <Box display='grid' sx={styles.postContainer}>
           {posts.map((post, index) => (
             <PostCard key={index} post={post.node}/>
           ))}
-        </div>
+        </Box>
         {/* <div className="col-span-1 lg:col-span-4">
           <div className="relative lg:sticky top-8">
             <PostWidget/>
@@ -49,6 +50,15 @@ export default function Home({ posts} ) {
     </div>
   </>
   );
+}
+
+const styles = {
+  postContainer: {
+   
+
+    
+    
+  }
 }
 
 // Fetch data at build time
