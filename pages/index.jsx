@@ -32,7 +32,7 @@ export default function Home({ posts} ) {
     <div className="container px-10 mx-auto mb-8">
       {/* <FeaturedPosts /> //! featured posts go here  */}
  <MainPost posts={posts}/>
-      <div className="grid grid-rows-2 gap-2 bg-gray-900 lg:grid-cols-2 lg:flex ">
+      <div className="grid grid-rows-2 gap-2 lg:grid-cols-2 lg:flex ">
         <div>
           {posts.map((post, index) => (
             <PostCard key={index} post={post.node}/>

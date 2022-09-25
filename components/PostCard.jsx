@@ -13,6 +13,7 @@ const PostCard = ({post}) => {
     return (
         // CARD CONTAINER
         <div className='pb-12 m-10 mb-8 bg-gray-800 rounded-lg shadow-lg lg:p-8 ' data-aos='fade-right' data-aos-duration='1000' data-aos-delay='100'>
+            
         {/* CARD */}
         <div className='relative mb-6 overflow-hidden shadow-md pb-80'>
         <img 
